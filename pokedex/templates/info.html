@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="modal active" id="modal">
+    <div class="modal-header">
+        <div class="title"><h1>{{ poke['name'].capitalize() }}</h1></div>
+        <button data-close-button class="close-btn">&times;</button>
+    </div>
+    <div class="model-body">
+        <img src="{{ poke['sprites']['front_default'] }}">
+        {% for n in poke['types'] %}
+            <h3>Type: {{ n['type']['name'] }}</h3>
+        {% endfor %}
+    </div>
+</div>
+<div class="active" id="overlay"></div>
+{% endblock %}

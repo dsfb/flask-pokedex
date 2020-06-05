@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #EFEFBB;
+    background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB);
+    background: linear-gradient(to right, #D4D3DD, #EFEFBB);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lato';
+    margin: 0;
+}
+
+h1 {
+    letter-spacing: 3px;
+}
+
+.poke-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-between;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    max-width: 1200px;
+}
+
+.pokemon {
+    background-color: #eee;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+}
+
+.pokemon .img-container {
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.pokemon .img-container img {
+    margin-top: 20px;
+    max-width: 90%;
+}
+
+.pokemon .info {
+    margin-top: 20px;
+}
+
+.pokemon .number {
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 0.8em;
+    padding: 5px 10px;
+}
+
+.pokemon .name {
+    margin: 15px 0 7px;
+    letter-spacing: 1px;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 300px;
+    max-width: 80%;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 10px 15px;
+}
+
+#overlay{
+    transition: 200ms ease-in-out;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
