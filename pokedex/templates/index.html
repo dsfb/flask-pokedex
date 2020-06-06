@@ -10,21 +10,16 @@
         <h1>Flask Pokedex</h1>
         <div class="poke-container">
             {% for id in range(0, 151) %}
-                <div class="pokemon">
+                <div class="pokemon" id="card">
                     <div class="img-container">
                         <img src="https://pokeres.bastionbot.org/images/pokemon/{{id+1}}.png">
                     </div>
                     <div class="info">
                         <span class="number">#{{ id+1 }}</span>
                         <h3 class="name">{{ pokemon['pokemon_entries'][id]['pokemon_species']['name'].capitalize() }}</h3>
-                        <form action="/pokemons/{{ id+1 }}" method="GET">
-                            <small><button data-modal-target='#modal' class="more">More</button></small>
-                        </form>
                     </div>
                 </div>
             {% endfor %}
-            {% block content %}
-            {% endblock %}
         </div>
         <script src="{{ url_for('static', filename='script.js') }}"></script>
     </body>
